@@ -26,6 +26,7 @@ public class HTTPRequests {
 		when()
 			.get("https://reqres.in/api/users?page=2")	
 		
+			
 		.then()
 			.statusCode(200)
 			.body("page",equalTo(2))//in body if there is 2 then it will pass
