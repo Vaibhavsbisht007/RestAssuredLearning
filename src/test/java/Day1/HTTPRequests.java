@@ -20,13 +20,13 @@ import java.util.HashMap;
 
 public class HTTPRequests {
 
-	//@Test(priority=1)   
+	@Test(priority=1)   
 	void getUser() {
-		//given()
-		when()
+		given()
+		.header("x-api-key", "reqres-free-v1")
+		.when()
 			.get("https://reqres.in/api/users?page=2")	
-		
-			
+					
 		.then()
 			.statusCode(200)
 			.body("page",equalTo(2))//in body if there is 2 then it will pass
@@ -77,7 +77,7 @@ public class HTTPRequests {
 			.log().all();		
 	}
 	
-	@Test
+//	@Test
 void deleteUser() {//put resquest
 		
 		HashMap data=new HashMap();
